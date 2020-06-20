@@ -11,6 +11,8 @@ package info.ata4.minecraft.dragon;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.registry.RegistryNamespaced;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -18,14 +20,21 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * @author Nico Bergemann <barracuda415 at yahoo.de>
  */
 public class DragonMountsSoundEvents {
-    
+
     public static final SoundEvent ENTITY_DRAGON_MOUNT_STEP = registerSound("mob.enderdragon.step");
     public static final SoundEvent ENTITY_DRAGON_MOUNT_BREATHE = registerSound("mob.enderdragon.breathe");
     public static final SoundEvent ENTITY_DRAGON_MOUNT_DEATH = registerSound("mob.enderdragon.death");
 
+    public static void registerSounds() {}
+
     private static SoundEvent registerSound(String soundName) {
         ResourceLocation soundID = new ResourceLocation(DragonMounts.AID, soundName);
-        return GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
+
+        SoundEvent event = new SoundEvent(soundID).setRegistryName(soundID);
+
+        ForgeRegistries.SOUND_EVENTS.register(event);
+        return event;
+
     }
 
     private DragonMountsSoundEvents() {

@@ -25,8 +25,13 @@ public class DragonMountsConfigGuiFactory implements IModGuiFactory {
     }
 
     @Override
-    public Class<? extends GuiScreen> mainConfigGuiClass() {
-        return DragonMountsConfigGui.class;
+    public boolean hasConfigGui() {
+        return false;
+    }
+
+    @Override
+    public GuiScreen createConfigGui(GuiScreen parentScreen) {
+        return new DragonMountsConfigGui(parentScreen);
     }
 
     @Override
@@ -34,9 +39,5 @@ public class DragonMountsConfigGuiFactory implements IModGuiFactory {
         return null;
     }
 
-    @Override
-    public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {
-        return null;
-    }
     
 }

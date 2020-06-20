@@ -10,11 +10,13 @@
 package info.ata4.minecraft.dragon.server;
 
 import info.ata4.minecraft.dragon.DragonMounts;
+import info.ata4.minecraft.dragon.DragonMountsSoundEvents;
 import info.ata4.minecraft.dragon.server.block.BlockDragonBreedEgg;
 import info.ata4.minecraft.dragon.server.cmd.CommandDragon;
 import info.ata4.minecraft.dragon.server.entity.EntityTameableDragon;
 import info.ata4.minecraft.dragon.server.handler.DragonEggBlockHandler;
 import info.ata4.minecraft.dragon.server.item.ItemDragonBreedEgg;
+import net.minecraft.block.Block;
 import net.minecraft.command.ServerCommandManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
@@ -25,6 +27,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLServerStoppedEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -39,8 +42,9 @@ public class CommonProxy {
     private final boolean ENTITY_SEND_VELO_UPDATES = true;
     
     public void onPreInit(FMLPreInitializationEvent event) {
-        GameRegistry.register(BlockDragonBreedEgg.INSTANCE.setRegistryName("dragon_egg"));
-        GameRegistry.register(ItemDragonBreedEgg.INSTANCE.setRegistryName("dragon_egg"));
+        ForgeRegistries.BLOCKS.register(BlockDragonBreedEgg.INSTANCE.setRegistryName("dragon_egg"));
+        ForgeRegistries.ITEMS.register(ItemDragonBreedEgg.INSTANCE.setRegistryName("dragon_egg"));
+        DragonMountsSoundEvents.registerSounds();
     }
     
     public void onInit(FMLInitializationEvent evt) {

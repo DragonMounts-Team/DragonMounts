@@ -65,7 +65,7 @@ public class GuiDragonDebug extends Gui implements PrivateAccessor {
     private EntityTameableDragon dragonServer;
     
     public GuiDragonDebug() {
-        fr = mc.fontRendererObj;
+        fr = mc.fontRenderer;
         text = new GuiTextPrinter(fr);
     }
     

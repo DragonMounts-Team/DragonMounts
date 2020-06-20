@@ -49,6 +49,8 @@ import net.minecraft.world.WorldServer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.annotation.Nullable;
+
 /**
  * Here be dragons.
  * 
@@ -292,17 +294,19 @@ public class EntityTameableDragon extends EntityTameable {
         
         super.onLivingUpdate();
     }
-    
+
     @Override
-    public void moveEntityWithHeading(float strafe, float forward) {
+    public void moveRelative(float strafe, float up, float forward, float friction) {
+        // TODO
         // disable method while flying, the movement is done entirely by
         // moveEntity() and this one just makes the dragon to fall slowly when
         // hovering
         if (!isFlying()) {
-            super.moveEntityWithHeading(strafe, forward);
+            super.moveRelative(strafe, up, forward, friction);
         }
+
     }
-    
+
     /**
      * Handles entity death timer, experience orb and particle creation
      */
@@ -360,11 +364,12 @@ public class EntityTameableDragon extends EntityTameable {
     /**
      * Returns the sound this mob makes when it is hurt.
      */
+    @Nullable
     @Override
-    protected SoundEvent getHurtSound() {
+    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
         return getSoundManager().getHurtSound();
     }
-    
+
     /**
      * Returns the sound this mob makes on death.
      */
@@ -449,7 +454,7 @@ public class EntityTameableDragon extends EntityTameable {
     public void tamedFor(EntityPlayer player, boolean successful) {       
         if (successful) {
             setTamed(true);
-            navigator.clearPathEntity();  // replacement for setPathToEntity(null);
+            navigator.clearPath();  // replacement for setPathToEntity(null);
             setAttackTarget(null);
             setOwnerId(player.getUniqueID());
             playTameEffect(true);
@@ -732,7 +737,7 @@ public class EntityTameableDragon extends EntityTameable {
 //    }
     
     public boolean isInvulnerableTo(DamageSource src) {
-        Entity srcEnt = src.getEntity();
+        Entity srcEnt = src.getTrueSource();
         if (srcEnt != null) {
             // ignore own damage
             if (srcEnt == this) {

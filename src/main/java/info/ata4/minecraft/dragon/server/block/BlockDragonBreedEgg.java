@@ -32,7 +32,7 @@ public class BlockDragonBreedEgg extends BlockDragonEgg {
     public static final BlockDragonBreedEgg INSTANCE = new BlockDragonBreedEgg();
     
     private BlockDragonBreedEgg() {
-        setUnlocalizedName("dragonEgg");
+        // todo setUnlocalizedName("dragonEgg");
         setHardness(3);
         setResistance(15);
         setSoundType(SoundType.WOOD);
@@ -59,8 +59,8 @@ public class BlockDragonBreedEgg extends BlockDragonEgg {
     }
     
     @Override
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list) {
-        EnumDragonBreed.META_MAPPING.values().forEach(index -> list.add(new ItemStack(itemIn, 1, index)));
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
+        EnumDragonBreed.META_MAPPING.values().forEach(index -> list.add(new ItemStack(this, 1, index)));
     }
 
     @Override

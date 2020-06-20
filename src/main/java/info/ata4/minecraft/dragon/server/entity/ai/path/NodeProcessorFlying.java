@@ -43,9 +43,9 @@ public class NodeProcessorFlying extends SwimNodeProcessor {
         
         for (EnumFacing facing : EnumFacing.values()) {
             PathPoint point = getSafePoint(entity,
-                currentPoint.xCoord + facing.getFrontOffsetX(),
-                currentPoint.yCoord + facing.getFrontOffsetY(),
-                currentPoint.zCoord + facing.getFrontOffsetZ()
+                currentPoint.x + facing.getXOffset(),
+                currentPoint.y + facing.getYOffset(),
+                currentPoint.z + facing.getZOffset()
             );
 
             if (point != null && !point.visited && point.distanceTo(targetPoint) < maxDistance) {

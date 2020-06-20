@@ -55,13 +55,13 @@ public class EntityAIDragonCatchOwner extends EntityAIDragonBase {
         // don't catch if owner has a working Elytra equipped
         // note: isBroken() is misleading, it actually checks if the items is usable
         ItemStack itemStack = owner.getItemStackFromSlot(EntityEquipmentSlot.CHEST);
-        if (itemStack != null && itemStack.getItem() == Items.ELYTRA && ItemElytra.isBroken(itemStack)) {
+        if (itemStack != null && itemStack.getItem() == Items.ELYTRA && !ItemElytra.isUsable(itemStack)) {
             return false;
         }
         
         // don't catch if owner is too far away
         double followRange = getFollowRange();
-        if (dragon.getDistanceToEntity(owner) > followRange) {
+        if (dragon.getDistance(owner) > followRange) {
             return false;
         }
                 
@@ -69,10 +69,10 @@ public class EntityAIDragonCatchOwner extends EntityAIDragonBase {
     }
 
     @Override
-    public boolean continueExecuting() {
-        return shouldExecute() && !dragon.getNavigator().noPath();
+    public boolean shouldContinueExecuting() {
+        return super.shouldContinueExecuting()&& !dragon.getNavigator().noPath();
     }
-    
+
     @Override
     public void updateTask() {
         // catch owner in flight if possible
@@ -81,7 +81,7 @@ public class EntityAIDragonCatchOwner extends EntityAIDragonBase {
         }
         
         // mount owner if close enough, otherwise move to owner
-        if (dragon.getDistanceToEntity(owner) < dragon.width) {
+        if (dragon.getDistance(owner) < dragon.width) {
             owner.startRiding(dragon);
         } else {
             dragon.getNavigator().tryMoveToEntityLiving(owner, 1);

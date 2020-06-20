@@ -50,7 +50,7 @@ public class EntityAIDragonMate extends EntityAIDragonBase {
      * Returns whether an in-progress EntityAIBase should continue executing
      */
     @Override
-    public boolean continueExecuting() {
+    public boolean shouldContinueExecuting() {
         return dragonMate.isEntityAlive() && dragonMate.isInLove() && spawnBabyDelay < 60;
     }
 

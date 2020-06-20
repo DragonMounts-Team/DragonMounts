@@ -246,7 +246,7 @@ public class DragonAnimator extends DragonHelper {
         groundTimer.set(groundVal);
 
         // update flutter transition
-        boolean flutterFlag = !onGround && (dragon.isCollided || dragon.motionY > -0.1 || speedEnt < speedMax);
+        boolean flutterFlag = !onGround && (!dragon.isNotColliding() || dragon.motionY > -0.1 || speedEnt < speedMax);
         flutterTimer.add(flutterFlag ? 0.1f : -0.1f);
 
         // update walking transition
