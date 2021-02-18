@@ -30,6 +30,10 @@ public class DragonBreedAir extends DragonBreed {
 		addImmunity(DamageSource.MAGIC);
 
 		addHabitatBiome(Biomes.EXTREME_HILLS);
+		addHabitatBiome(Biomes.EXTREME_HILLS_EDGE);
+		addHabitatBiome(Biomes.EXTREME_HILLS_WITH_TREES);
+		addHabitatBiome(Biomes.MUTATED_EXTREME_HILLS);
+		addHabitatBiome(Biomes.MUTATED_EXTREME_HILLS_WITH_TREES);
 	}
 
 	@Override
