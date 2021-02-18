@@ -99,3 +99,6 @@ gradle-app.setting
 # Other
 /private/
 /minecraft/
+*.iws
+*.iml
+*.ipr

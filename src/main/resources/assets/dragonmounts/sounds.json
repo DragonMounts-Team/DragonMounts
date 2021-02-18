@@ -1,29 +1,29 @@
 {
   "mob.enderdragon.breathe": {
-    "sounds": [
-      {
-        "name": "minecraft:mob/cow/say2",
-        "volume": 0.5,
-        "pitch": 0.5
-      },
-      {
-        "name": "minecraft:mob/cow/say4",
-        "volume": 0.5,
-        "pitch": 0.5
-      }
-    ]
+	"sounds": [
+	  {
+		"name": "minecraft:mob/cow/say2",
+		"volume": 0.5,
+		"pitch": 0.5
+	  },
+	  {
+		"name": "minecraft:mob/cow/say4",
+		"volume": 0.5,
+		"pitch": 0.5
+	  }
+	]
   },
   "mob.enderdragon.step": {
-    "sounds": [
-      "dragonmounts:mob/enderdragon/step1",
-      "dragonmounts:mob/enderdragon/step2",
-      "dragonmounts:mob/enderdragon/step3",
-      "dragonmounts:mob/enderdragon/step4"
-    ]
+	"sounds": [
+	  "dragonmounts:mob/enderdragon/step1",
+	  "dragonmounts:mob/enderdragon/step2",
+	  "dragonmounts:mob/enderdragon/step3",
+	  "dragonmounts:mob/enderdragon/step4"
+	]
   },
   "mob.enderdragon.death": {
-    "sounds": [
-      "dragonmounts:mob/enderdragon/death"
-    ]
+	"sounds": [
+	  "dragonmounts:mob/enderdragon/death"
+	]
   }
 }
