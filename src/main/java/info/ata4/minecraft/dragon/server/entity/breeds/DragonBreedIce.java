@@ -31,11 +31,21 @@ public class DragonBreedIce extends DragonBreed {
 		addHabitatBlock(Blocks.SNOW_LAYER);
 		addHabitatBlock(Blocks.ICE);
 		addHabitatBlock(Blocks.PACKED_ICE);
+		addHabitatBlock(Blocks.FROSTED_ICE);
 
 		addHabitatBiome(Biomes.FROZEN_OCEAN);
 		addHabitatBiome(Biomes.FROZEN_RIVER);
 		addHabitatBiome(Biomes.ICE_MOUNTAINS);
 		addHabitatBiome(Biomes.ICE_PLAINS);
+		addHabitatBiome(Biomes.TAIGA);
+		addHabitatBiome(Biomes.TAIGA_HILLS);
+		addHabitatBiome(Biomes.COLD_TAIGA);
+		addHabitatBiome(Biomes.COLD_TAIGA_HILLS);
+		addHabitatBiome(Biomes.REDWOOD_TAIGA);
+		addHabitatBiome(Biomes.MUTATED_REDWOOD_TAIGA);
+		addHabitatBiome(Biomes.MUTATED_REDWOOD_TAIGA_HILLS);
+		addHabitatBiome(Biomes.MUTATED_TAIGA_COLD);
+		addHabitatBiome(Biomes.REDWOOD_TAIGA_HILLS);
 	}
 
 	@Override

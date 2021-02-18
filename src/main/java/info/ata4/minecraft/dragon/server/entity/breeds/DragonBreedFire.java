@@ -30,6 +30,7 @@ public class DragonBreedFire extends DragonBreed {
 		addHabitatBlock(Blocks.FLOWING_LAVA);
 		addHabitatBlock(Blocks.FIRE);
 		addHabitatBlock(Blocks.LIT_FURNACE);
+		addHabitatBlock(Blocks.MAGMA);
 
 		addHabitatBiome(Biomes.DESERT);
 		addHabitatBiome(Biomes.DESERT_HILLS);
