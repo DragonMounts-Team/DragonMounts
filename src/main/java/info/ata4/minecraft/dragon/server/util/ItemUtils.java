@@ -41,7 +41,7 @@ public class ItemUtils {
 	public static Item consumeEquipped(EntityPlayer player, Item... items) {
 		ItemStack itemStack = player.getHeldItemMainhand();
 
-		if (itemStack == null) {
+		if (itemStack == ItemStack.EMPTY) {
 			return null;
 		}
 
@@ -56,7 +56,7 @@ public class ItemUtils {
 
 				// required because the stack isn't reduced in onItemRightClick()
 				if (itemStack.isEmpty()) {
-					player.inventory.setInventorySlotContents(player.inventory.currentItem, null);
+					player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
 				}
 
 				return item;
@@ -79,7 +79,7 @@ public class ItemUtils {
 	public static boolean hasEquippedFood(EntityPlayer player) {
 		ItemStack itemStack = player.getHeldItemMainhand();
 
-		if (itemStack == null) {
+		if (itemStack == ItemStack.EMPTY) {
 			return false;
 		}
 
@@ -96,7 +96,7 @@ public class ItemUtils {
 	public static boolean hasEquippedUsable(EntityPlayer player) {
 		ItemStack itemStack = player.getHeldItemMainhand();
 
-		if (itemStack == null) {
+		if (itemStack == ItemStack.EMPTY) {
 			return false;
 		}
 
@@ -113,7 +113,7 @@ public class ItemUtils {
 	public static boolean hasEquipped(EntityPlayer player, Item item) {
 		ItemStack itemStack = player.getHeldItemMainhand();
 
-		if (itemStack == null) {
+		if (itemStack == ItemStack.EMPTY) {
 			return false;
 		}
 
