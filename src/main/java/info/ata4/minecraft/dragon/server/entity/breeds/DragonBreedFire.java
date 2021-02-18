@@ -25,6 +25,9 @@ public class DragonBreedFire extends DragonBreed {
 		addImmunity(DamageSource.IN_FIRE);
 		addImmunity(DamageSource.ON_FIRE);
 		addImmunity(DamageSource.LAVA);
+		addImmunity(DamageSource.DRAGON_BREATH);
+		addImmunity(DamageSource.HOT_FLOOR);
+		addImmunity(DamageSource.FIREWORKS);
 
 		addHabitatBlock(Blocks.LAVA);
 		addHabitatBlock(Blocks.FLOWING_LAVA);
