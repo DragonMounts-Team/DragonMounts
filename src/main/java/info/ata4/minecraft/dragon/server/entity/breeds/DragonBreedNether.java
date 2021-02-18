@@ -34,6 +34,7 @@ public class DragonBreedNether extends DragonBreed {
 		addHabitatBlock(Blocks.NETHER_WART);
 		addHabitatBlock(Blocks.GLOWSTONE);
 		addHabitatBlock(Blocks.QUARTZ_ORE);
+		addHabitatBlock(Blocks.RED_NETHER_BRICK);
 
 		addHabitatBiome(Biomes.HELL);
 	}
