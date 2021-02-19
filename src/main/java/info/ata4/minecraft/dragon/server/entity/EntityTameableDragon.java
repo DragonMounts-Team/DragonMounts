@@ -232,6 +232,7 @@ public class EntityTameableDragon extends EntityTameable {
 	@Override
 	public void writeEntityToNBT(NBTTagCompound nbt) {
 		super.writeEntityToNBT(nbt);
+		nbt.setInteger("breathTimer", breathTimer);
 		nbt.setBoolean(NBT_SADDLED, isSaddled());
 
 		helpers.values().forEach(helper -> helper.writeToNBT(nbt));
@@ -243,6 +244,7 @@ public class EntityTameableDragon extends EntityTameable {
 	@Override
 	public void readEntityFromNBT(NBTTagCompound nbt) {
 		super.readEntityFromNBT(nbt);
+		breathTimer = nbt.getInteger("breathTimer");
 		setSaddled(nbt.getBoolean(NBT_SADDLED));
 
 		helpers.values().forEach(helper -> helper.readFromNBT(nbt));
@@ -252,6 +254,7 @@ public class EntityTameableDragon extends EntityTameable {
 	public void onLivingUpdate() {
 		helpers.values().forEach(DragonHelper::onLivingUpdate);
 
+		if (breathTimer > 0) breathTimer--;
 		if (isServer()) {
 			// set home position near owner when tamed
 			if (isTamed()) {
