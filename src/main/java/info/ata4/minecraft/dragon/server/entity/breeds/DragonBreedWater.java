@@ -28,10 +28,13 @@ public class DragonBreedWater extends DragonBreed {
 		addHabitatBlock(Blocks.FLOWING_WATER);
 		addHabitatBlock(Blocks.PRISMARINE);
 		addHabitatBlock(Blocks.SEA_LANTERN);
+		addHabitatBlock(Blocks.SPONGE);
 
 		addHabitatBiome(Biomes.OCEAN);
 		addHabitatBiome(Biomes.RIVER);
 		addHabitatBiome(Biomes.SWAMPLAND);
+		addHabitatBiome(Biomes.DEEP_OCEAN);
+		addHabitatBiome(Biomes.MUTATED_SWAMPLAND);
 	}
 
 	@Override

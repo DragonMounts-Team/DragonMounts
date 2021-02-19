@@ -37,6 +37,7 @@ public class DragonBreedFire extends DragonBreed {
 
 		addHabitatBiome(Biomes.DESERT);
 		addHabitatBiome(Biomes.DESERT_HILLS);
+		addHabitatBiome(Biomes.MUTATED_DESERT);
 	}
 
 	@Override
