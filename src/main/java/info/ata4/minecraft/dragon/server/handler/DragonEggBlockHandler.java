@@ -63,7 +63,7 @@ public class DragonEggBlockHandler {
 		if (player == null)
 			return;
 		ItemStack heldItem = player.getHeldItem(EnumHand.MAIN_HAND);
-		if (heldItem == null)
+		if (heldItem == ItemStack.EMPTY)
 			return;
 		if (heldItem.getItem() != Items.FLINT_AND_STEEL)
 			return;
