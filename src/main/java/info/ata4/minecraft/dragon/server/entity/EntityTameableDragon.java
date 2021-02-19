@@ -27,6 +27,8 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.item.ItemGlassBottle;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -35,9 +37,11 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SPacketAnimation;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -58,6 +62,8 @@ import static net.minecraft.entity.SharedMonsterAttributes.*;
  * @author Nico Bergemann <barracuda415 at yahoo.de>
  */
 public class EntityTameableDragon extends EntityTameable {
+
+	private int breathTimer = 0;
 
 	public static final IAttribute MOVEMENT_SPEED_AIR = new RangedAttribute(null,
 			"generic.movementSpeedAir", 1.5, 0.0, Double.MAX_VALUE)
@@ -445,6 +451,21 @@ public class EntityTameableDragon extends EntityTameable {
 			return true;
 		}
 
+		ItemStack itemstack = player.getHeldItem(hand);
+		if (itemstack.getItem() == Items.GLASS_BOTTLE && this.isAdult() && breathTimer == 0) {
+			itemstack.shrink(1);
+
+			if (itemstack.isEmpty()) {
+				player.setHeldItem(hand, new ItemStack(Items.DRAGON_BREATH));
+				breathTimer = 96000;
+			} else if (!player.inventory.addItemStackToInventory(new ItemStack(Items.DRAGON_BREATH))) {
+				player.dropItem(new ItemStack(Items.DRAGON_BREATH), false);
+				breathTimer = 96000;
+			}
+
+			return true;
+		}
+
 		return getInteractHelper().interact(player, player.getHeldItem(hand));
 	}
 
@@ -474,6 +495,8 @@ public class EntityTameableDragon extends EntityTameable {
 	public boolean isBreedingItem(ItemStack item) {
 		return getBreed().getBreedingItem() == item.getItem();
 	}
+
+
 
 	/**
 	 * Returns the height of the eyes. Used for looking at other entities.
