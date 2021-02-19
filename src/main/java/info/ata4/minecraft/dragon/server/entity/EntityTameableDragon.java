@@ -27,8 +27,6 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.item.ItemGlassBottle;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -37,11 +35,9 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SPacketAnimation;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -62,8 +58,6 @@ import static net.minecraft.entity.SharedMonsterAttributes.*;
  * @author Nico Bergemann <barracuda415 at yahoo.de>
  */
 public class EntityTameableDragon extends EntityTameable {
-
-	private int breathTimer = 0;
 
 	public static final IAttribute MOVEMENT_SPEED_AIR = new RangedAttribute(null,
 			"generic.movementSpeedAir", 1.5, 0.0, Double.MAX_VALUE)
@@ -94,15 +88,13 @@ public class EntityTameableDragon extends EntityTameable {
 			EntityDataManager.createKey(EntityTameableDragon.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> DATA_TICKS_SINCE_CREATION =
 			EntityDataManager.createKey(EntityTameableDragon.class, DataSerializers.VARINT);
-
 	// data NBT IDs
 	private static final String NBT_SADDLED = "Saddle";
-
 	// server/client delegates
 	private final Map<Class, DragonHelper> helpers = new HashMap<>();
-
 	// client-only delegates
 	private final DragonBodyHelper bodyHelper = new DragonBodyHelper(this);
+	private int breathTimer = 0;
 
 	public EntityTameableDragon(World world) {
 		super(world);
@@ -495,7 +487,6 @@ public class EntityTameableDragon extends EntityTameable {
 	public boolean isBreedingItem(ItemStack item) {
 		return getBreed().getBreedingItem() == item.getItem();
 	}
-
 
 
 	/**
