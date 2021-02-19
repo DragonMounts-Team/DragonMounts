@@ -12,7 +12,6 @@ package info.ata4.minecraft.dragon.server.entity.helper;
 import info.ata4.minecraft.dragon.server.entity.EntityTameableDragon;
 import info.ata4.minecraft.dragon.server.entity.ai.EntityAIDragonCatchOwner;
 import info.ata4.minecraft.dragon.server.entity.ai.EntityAIDragonRide;
-import info.ata4.minecraft.dragon.server.entity.ai.air.EntityAIDragonFollowOwner;
 import info.ata4.minecraft.dragon.server.entity.ai.air.EntityAIDragonLand;
 import info.ata4.minecraft.dragon.server.entity.ai.ground.EntityAIDragonHunt;
 import info.ata4.minecraft.dragon.server.entity.ai.ground.EntityAIDragonMate;
