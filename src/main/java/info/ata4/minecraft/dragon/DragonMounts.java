@@ -10,6 +10,8 @@
 package info.ata4.minecraft.dragon;
 
 import info.ata4.minecraft.dragon.server.CommonProxy;
+import info.ata4.minecraft.dragon.util.LootHandler;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -62,6 +64,7 @@ public class DragonMounts {
 		config = new DragonMountsConfig(new Configuration(evt.getSuggestedConfigurationFile()));
 		metadata = evt.getModMetadata();
 		proxy.onPreInit(evt);
+		MinecraftForge.EVENT_BUS.register(new LootHandler());
 	}
 
 	@EventHandler
