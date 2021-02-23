@@ -1,0 +1,28 @@
+{
+  "pools": [
+	{
+	  "name": "nether_egg",
+	  "rolls": 1,
+	  "entries": [
+		{
+		  "type": "item",
+		  "name": "dragonmounts:dragon_egg",
+		  "weight": 3,
+		  "functions": [
+			{
+			  "function": "set_count",
+			  "count": {
+				"min": 0,
+				"max": 2
+			  }
+			},
+			{
+			  "function": "set_data",
+			  "data": 6
+			}
+		  ]
+		}
+	  ]
+	}
+  ]
+}
