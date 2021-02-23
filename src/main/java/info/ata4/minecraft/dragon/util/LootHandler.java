@@ -13,5 +13,38 @@ public class LootHandler {
 		if (evt.getName().equals(LootTableList.CHESTS_NETHER_BRIDGE)) {
 			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
 		}
+		if (evt.getName().equals(LootTableList.CHESTS_DESERT_PYRAMID)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_END_CITY_TREASURE)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_IGLOO_CHEST)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_JUNGLE_TEMPLE)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_ABANDONED_MINESHAFT)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_STRONGHOLD_CORRIDOR)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_STRONGHOLD_CROSSING)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_STRONGHOLD_LIBRARY)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_WOODLAND_MANSION)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.CHESTS_SIMPLE_DUNGEON)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
+		if (evt.getName().equals(LootTableList.ENTITIES_ELDER_GUARDIAN)) {
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+		}
 	}
 }
