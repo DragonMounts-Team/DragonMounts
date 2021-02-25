@@ -1,0 +1,28 @@
+{
+  "pools": [
+	{
+	  "name": "air_egg",
+	  "rolls": 1,
+	  "entries": [
+		{
+		  "type": "item",
+		  "name": "dragonmounts:dragon_egg",
+		  "weight": 3,
+		  "functions": [
+			{
+			  "function": "set_count",
+			  "count": {
+				"min": 0,
+				"max": 1
+			  }
+			},
+			{
+			  "function": "set_data",
+			  "data": 0
+			}
+		  ]
+		}
+	  ]
+	}
+  ]
+}
