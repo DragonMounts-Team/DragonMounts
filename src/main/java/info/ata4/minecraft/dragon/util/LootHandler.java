@@ -26,25 +26,25 @@ public class LootHandler {
 			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
 		}
 		if (evt.getName().equals(LootTableList.CHESTS_ABANDONED_MINESHAFT)) {
-			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/ghost_egg"), 5, 0, new LootCondition[0], "ghost_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "ghost_egg"));
 		}
 		if (evt.getName().equals(LootTableList.CHESTS_STRONGHOLD_CORRIDOR)) {
-			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/fire_egg"), 5, 0, new LootCondition[0], "fire_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "fire_egg"));
 		}
 		if (evt.getName().equals(LootTableList.CHESTS_STRONGHOLD_CROSSING)) {
-			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/fire_egg"), 5, 0, new LootCondition[0], "fire_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "fire_egg"));
 		}
 		if (evt.getName().equals(LootTableList.CHESTS_STRONGHOLD_LIBRARY)) {
-			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/fire_egg"), 5, 0, new LootCondition[0], "fire_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "fire_egg"));
 		}
 		if (evt.getName().equals(LootTableList.CHESTS_WOODLAND_MANSION)) {
-			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/ghost_egg"), 5, 0, new LootCondition[0], "ghost_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "ghost_egg"));
 		}
 		if (evt.getName().equals(LootTableList.CHESTS_SIMPLE_DUNGEON)) {
 			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
 		}
 		if (evt.getName().equals(LootTableList.ENTITIES_ELDER_GUARDIAN)) {
-			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/nether_egg"), 5, 0, new LootCondition[0], "nether_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "nether_egg"));
+			evt.getTable().addPool(new LootPool(new LootEntry[]{new LootEntryTable(new ResourceLocation(DragonMounts.AID, "chests/water_egg"), 5, 0, new LootCondition[0], "water_egg")}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0, 1), "water_egg"));
 		}
 	}
 }
