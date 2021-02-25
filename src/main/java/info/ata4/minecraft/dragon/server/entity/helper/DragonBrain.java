@@ -9,6 +9,7 @@
  */
 package info.ata4.minecraft.dragon.server.entity.helper;
 
+import com.google.common.collect.Sets;
 import info.ata4.minecraft.dragon.server.entity.EntityTameableDragon;
 import info.ata4.minecraft.dragon.server.entity.ai.EntityAIDragonCatchOwner;
 import info.ata4.minecraft.dragon.server.entity.ai.EntityAIDragonRide;
@@ -21,25 +22,28 @@ import info.ata4.minecraft.dragon.server.util.EntityClassPredicate;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.ai.EntityAITasks.EntityAITaskEntry;
 import net.minecraft.entity.passive.*;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateGround;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Nico Bergemann <barracuda415 at yahoo.de>
  */
 public class DragonBrain extends DragonHelper {
 
+	public static final Set<Item> PRECIOUS_ITEMS = Sets.newHashSet(Items.GOLDEN_APPLE, Items.GOLD_NUGGET, Items.GOLD_INGOT, Items.DIAMOND, Items.EMERALD, Items.QUARTZ, Items.TOTEM_OF_UNDYING, Items.NETHER_STAR);
+
+	// mutex 1: waypointing
+	// mutex 2: continuous waypointing
 	// mutex 1: movement
 	// mutex 2: looking
 	// mutex 4: special state
 	private final EntityAITasks tasks;
-
-	// mutex 1: waypointing
-	// mutex 2: continuous waypointing
-
 	// mutex 1: generic targeting
 	private final EntityAITasks targetTasks;
 
@@ -98,8 +102,10 @@ public class DragonBrain extends DragonHelper {
 			tasks.addTask(2, new EntityAISwimming(dragon)); // mutex 4
 			tasks.addTask(4, dragon.getAISit()); // mutex 4+1
 
-			tasks.addTask(6, new EntityAITempt(dragon, 0.75, dragon.getBreed().getBreedingItem(), false)); // mutex 2+1
+			tasks.addTask(6, new EntityAITempt(dragon, 0.75, dragon.getBreed().getBreedingItem(), false));// mutex 2+1
 			tasks.addTask(7, new EntityAIAttackMelee(dragon, 1, true)); // mutex 2+1
+
+			tasks.addTask(6, new EntityAITempt(dragon, 0.95, false, PRECIOUS_ITEMS));
 
 //            tasks.addTask(9, new EntityAIDragonFollowOwner(dragon, 1, 12, 128)); // mutex 2+1
 			tasks.addTask(10, new EntityAIWander(dragon, 1)); // mutex 1
