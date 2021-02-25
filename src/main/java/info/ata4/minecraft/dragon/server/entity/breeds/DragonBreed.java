@@ -16,6 +16,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -112,7 +113,7 @@ public abstract class DragonBreed {
 	}
 
 	public Item[] getFoodItems() {
-		return new Item[]{Items.PORKCHOP, Items.BEEF, Items.CHICKEN};
+		return new Item[]{Items.PORKCHOP, Items.BEEF, Items.CHICKEN, Items.RABBIT, Items.MUTTON, Items.EGG};
 	}
 
 	public Item getBreedingItem() {
