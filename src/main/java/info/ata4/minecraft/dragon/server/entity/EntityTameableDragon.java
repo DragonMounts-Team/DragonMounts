@@ -38,6 +38,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -253,6 +254,14 @@ public class EntityTameableDragon extends EntityTameable {
 	@Override
 	public void onLivingUpdate() {
 		helpers.values().forEach(DragonHelper::onLivingUpdate);
+
+		if (!this.getPassengers().isEmpty()) {
+			this.getLookHelper().setLookPositionWithEntity(getPassengers().get(0), 100F, 100F);
+
+			// push out of user in wall
+			Vec3d riderPos = this.getRiderPosition();
+			this.pushOutOfBlocks(riderPos.x, riderPos.y, riderPos.z);
+		}
 
 		if (breathTimer > 0) breathTimer--;
 		if (isServer()) {
@@ -713,6 +722,28 @@ public class EntityTameableDragon extends EntityTameable {
 			return (EntityPlayer) entity;
 		} else {
 			return null;
+		}
+	}
+
+	@Override
+	public void updatePassenger(Entity passenger) {
+		if (!this.getPassengers().isEmpty()) {
+			Vec3d riderPos = this.getRiderPosition();
+
+			this.getPassengers().get(0).setPosition(riderPos.x, riderPos.y, riderPos.z);
+		}
+	}
+
+	private Vec3d getRiderPosition() {
+		if (!this.getPassengers().isEmpty()) {
+			float distance = 0.95F;
+
+			double dx = Math.cos((this.rotationYaw + 90) * Math.PI / 180.0D) * distance;
+			double dz = Math.sin((this.rotationYaw + 90) * Math.PI / 180.0D) * distance;
+
+			return new Vec3d(this.posX + dx, this.posY + this.getMountedYOffset() + this.getPassengers().get(0).getYOffset(), this.posZ + dz);
+		} else {
+			return new Vec3d(this.posX, this.posY, this.posZ);
 		}
 	}
 
