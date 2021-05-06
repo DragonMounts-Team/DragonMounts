@@ -255,14 +255,6 @@ public class EntityTameableDragon extends EntityTameable {
 	public void onLivingUpdate() {
 		helpers.values().forEach(DragonHelper::onLivingUpdate);
 
-		if (!this.getPassengers().isEmpty()) {
-			this.getLookHelper().setLookPositionWithEntity(getPassengers().get(0), 100F, 100F);
-
-			// push out of user in wall
-			Vec3d riderPos = this.getRiderPosition();
-			this.pushOutOfBlocks(riderPos.x, riderPos.y, riderPos.z);
-		}
-
 		if (breathTimer > 0) breathTimer--;
 		if (isServer()) {
 			// set home position near owner when tamed
